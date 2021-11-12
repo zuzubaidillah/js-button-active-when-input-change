@@ -1,0 +1,85 @@
+<html>
+
+<head>
+  <title>jQuery - Enable or Disable Button</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+  <label>Name:</label>
+  <input type="text" id="tbName" />
+  <br>
+  <label>Name1:</label>
+  <input type="text" id="tbName1" />
+  <br>
+  <label>Name2:</label>
+  <input type="text" id="tbName2" />
+  <br>
+  <label>Name3:</label>
+  <input type="text" id="tbName3" />
+  <br>
+  <input type="submit" id="submit" disabled="disabled" />
+</body>
+<script>
+  // Create an empty Headers instance
+  let headers = new Headers();
+
+  // Add a few headers
+  headers.append('Content-Type', 'text/plain');
+  headers.append('X-My-Custom-Header', 'CustomValue');
+
+  // Check, get, and set header values
+  headers.has('Content-Type'); // true
+  headers.get('Content-Type'); // "text/plain"
+  headers.set('Content-Type', 'application/json');
+
+  // Delete a header
+  headers.delete('X-My-Custom-Header');
+
+  // Add initial values
+  let headers = new Headers({
+    'Content-Type': 'text/plain',
+    'X-My-Custom-Header': 'CustomValue'
+  });
+  $(document).ready(function () {
+    $('#tbName').val('saya');
+    $('#tbName1').val('adalah');
+    $('#tbName2').val('kamu');
+    $('#tbName3').val('iya');
+    $('#tbName').on('input change', function () {
+      var a = $(this).val();
+
+      if (a.trim() == 'saya') {
+        $('#submit').prop('disabled', true);
+      } else {
+        $('#submit').prop('disabled', false);
+      }
+    });
+    $('#tbName1').on('input change', function () {
+      var a = $(this).val();
+      if (a == 'adalah') {
+        $('#submit').prop('disabled', true);
+      } else {
+        $('#submit').prop('disabled', false);
+      }
+    });
+    $('#tbName2').on('input change', function () {
+      var a = $(this).val();
+      if (a == 'kamu') {
+        $('#submit').prop('disabled', true);
+      } else {
+        $('#submit').prop('disabled', false);
+      }
+    });
+    $('#tbName3').on('input change', function () {
+      var a = $(this).val();
+      if (a == 'iya') {
+        $('#submit').prop('disabled', true);
+      } else {
+        $('#submit').prop('disabled', false);
+      }
+    });
+  });
+</script>
+
+</html>
